@@ -31,15 +31,16 @@
     <aside class="sidebar">
         <h2>Sede central de Spotify</h2>
         <div class="Cede">
-       <p> <b> Spotify AB </b> <br>
-            Regeringsgatan 19 <br>
-            SE-111 53 Stockholm <br>
-            Sweden <br>
-            Reg no: 556703-7485 <br>
-            office@spotify.com</p> 
+       <p> <strong> Spotify AB </strong> </p>
+            <p> Regeringsgatan 19 </p>
+           <p> SE-111 53 Stockholm </p>
+           <p> Sweden </p>
+           <p> Reg no: 556703-7485 </p>
+           <p> office@spotify.com</p> 
       
         <h2> <b>  Spotify en todo el mundo </b></h2>
-          <div class="flex-wrapper">
+        
+          <div class="flex-wrapper wrapper-cede">
           <p><b> Spotify Belguim </b> <br>
             Square de Meeus 37 <br>
             4th floor <br>
@@ -157,9 +158,10 @@ box-sizing: border-box;
 }
 
 
+
 h1{
 font-weight:900;
-font-size: 3pvw;
+font-size: 3vw;
 padding-top: 5px;
 padding-left: 5px;
 
@@ -174,6 +176,7 @@ h2{
 font-weight: 600;
 font-size:1.7em;
 }
+
 section, aside, footer {
     margin: 0;
     padding: 20px;
@@ -181,12 +184,18 @@ section, aside, footer {
     
 }
 
-.flex-wrapper{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-margin-right: 20px;
+.Cede{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 20px;
+  p{
+    padding: 0;
+    margin: 0;
+  }
 }
+
+
 
 a {
   color: #1DB954;
@@ -203,15 +212,20 @@ a:focus {
 }
 
 
-.hero { 
-    background: #d22b1f;
-}
+
 
 .content {
     align-items: center;
     flex: 1;
     line-height: 1.50;
-    width: 60%;
+    width: 100%;
+    text-align:justify;
+
+    @media screen and (min-width: 640px){
+.content{
+  width: 60%;
+  }
+}
 }
 
 .sidebar {
