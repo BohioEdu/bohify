@@ -9,9 +9,7 @@
 import PlaylistBanner from "@/components/layout/PlaylistBanner.vue";
 import ListOfSongs from '@/components/layout/ListOfSongs.vue';
 import heart from '@/assets/icons/Heart.svg'
-import menu from "@/assets/icons/menu.svg"
-import play from "@/assets/icons/play.svg"
-import pause from "@/assets/icons/pause.svg"
+
 export default ({
   
   data(){
@@ -66,12 +64,6 @@ export default ({
 
     return{
       Songs : Songs,
-      imgs: {
-        heart,
-        menu,
-        play: play,
-        pause: pause
-      },
       Banner :{
       img: heart, 
       name: "Team cucaracha",

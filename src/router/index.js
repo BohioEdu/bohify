@@ -33,19 +33,13 @@ const routes = [
 		path: "/app/playlist/:id",
 		name: "Playlist",
 		component: () =>
-			import(/* webpackChunkName: "Playlist" */ "../views/ListOfPlaylist.vue"),
+			import(/* webpackChunkName: "Playlist" */ "../views/Playlist.vue"),
 	},
 	{
 		path: "/app/search",
 		name: "Search",
 		component: () =>
 			import(/* webpackChunkName: "Search" */ "../views/Search.vue"),
-	},
-	{
-		path: "/app/playlists",
-		name: "PlaylistPage",
-		component: () =>
-			import(/* webpackChunkName: "PlaylistPage" */ "../views/Playlists.vue"),
 	},
 	{
 		path: "/:pathMatch(.*)*",

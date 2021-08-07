@@ -2,8 +2,8 @@
    <div class="ListOfMusic">
      <div class="buttons">
        <div @click="play = !play"  class="play">
-         <img  v-if="play == true" :src=" imgs.play">
-         <img v-else :src="imgs.pause">
+         <img  v-if="play == true" :src=" playIcon">
+         <img v-else :src="pause">
        </div>
        <div @click="like = !like" class='heart'>  
          <img v-if="like == true" :src="heart">
@@ -11,7 +11,7 @@
 
        </div>
        <div class="menu">
-         <img v-bind:src ="imgs.menu">
+         <img :src ="menu">
        </div>
      </div>
      <div class="List">
@@ -55,6 +55,8 @@ import heart from "../../assets/icons/Heart.svg"
 import heart_green from "../../assets/icons/Heart_green.svg"
 import playIcon from '../../assets/icons/play.svg'
 import clock  from '../../assets/icons/clock.svg'
+import pause from '../../assets/icons/pause.svg'
+import menu from '../../assets/icons/menu.svg'
 export default ({
   data(){
     return{
@@ -64,7 +66,9 @@ export default ({
       heart,
       heart_green,
       playIcon,
-      clock
+      clock,
+      pause,
+      menu
     }
   },
   props: {
