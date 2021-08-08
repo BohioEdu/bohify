@@ -21,7 +21,8 @@
             </div>
         </div>
         <div class="volume-container">
-            <img src="@/assets/icons/volume-icon.svg" class="volume-icon" />
+            <img v-if="isMuted" src="@/assets/icons/volume-muted-icon.svg" class="volume-icon" @click="muteAudio()"/>
+            <img v-else src="@/assets/icons/volume-icon.svg" class="volume-icon" @click="muteAudio()"/>
             <progress ref="volume" @mousedown="isMouseDown = true" @mouseup="isMouseDown = false" @mousemove="handleVolumeDrag($event)" @click="handleVolumeProgressChange($event)" max="100" value="100" class="progress"/>
         </div>
     </footer>
@@ -53,6 +54,7 @@
         },
         data(){
             return {
+                isMuted: false,
                 isMouseDown: false,
                 music,
                 currentTimeText: '0',
@@ -71,6 +73,11 @@
                 }
                 audio.play();
                 this.$refs.playIcon.src = PauseIcon;
+            },
+            muteAudio() {
+                const audio = this.$refs?.audio;
+                this.isMuted = !this.isMuted;
+                audio.muted = this.isMuted;
             },
             updateTime(){
                 const audio = this.$refs?.audio;
@@ -210,11 +217,13 @@
     }
     .volume-container {
         display: flex;
+        align-items: center;
         gap: 10px;
 
         .volume-icon {
             width: 20px;
             user-select: none;
+            cursor: pointer;
 
             &:hover {
                 filter: brightness(130%);
